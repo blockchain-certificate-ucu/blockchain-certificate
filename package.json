@@ -1,0 +1,16 @@
+{
+  "name": "certificate1.1",
+  "version": "1.0.0",
+  "description": "blockchain certificates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-testrpc": "^6.0.3",
+    "web3": "^0.20.1",
+    "web3-js": "^1.0.5-beta.26"
+  }
+}
