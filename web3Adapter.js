@@ -2,7 +2,7 @@ let Web3 = require('web3');
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 console.log(web3.eth.accounts);
-web3.eth.defaultAccount = web3.eth.accounts[0];
+web3.eth.defaultAccount = web3.eth.accounts[1];
 
 let abi = [
     {
@@ -30,15 +30,6 @@ let abi = [
             }
         ],
         "name": "createCertificate",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "createCertificate2",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -102,5 +93,6 @@ let abi = [
 
 let CertificateFactory = web3.eth.contract(abi);
 console.log(CertificateFactory);
-let Certificate = CertificateFactory.at('0x7b43117a046ee67135cc31b2b023ce4b65bde3dd');
+let Certificate = CertificateFactory.at('0x25bc9410e0b395c8c9f7eb325dfa048aa6bd2a28');
 console.log(Certificate);
+console.log(Certificate.methods);
