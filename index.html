@@ -17,55 +17,6 @@
         <input id="age" type="text">
         <button id="button">Update Instructor</button>
     </div>
-    <script>
-        let Web3 = require('web3');
-        let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-
-        web3.eth.defaultAccount = web3.eth.accounts[0];
-
-        let abi = [
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_fName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_age",
-                        "type": "uint256"
-                    }
-                ],
-                "name": "setInstructor",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-            },
-            {
-                "constant": true,
-                "inputs": [],
-                "name": "getInstructor",
-                "outputs": [
-                    {
-                        "name": "",
-                        "type": "string"
-                    },
-                    {
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-            }
-        ];
-
-        let CoursesContract = web3.eth.contract(abi);
-        console.log(CoursesContract);
-        let Courses = CoursesContract.at('0x2f898b48bcfee0d38fc702ec7d1e0168a21729f5');
-        console.log(Courses);
-    </script>
+    <script src="web3Adapter.js"></script>
 </body>
 </html>
