@@ -33,4 +33,9 @@ contract CertificateFactory {
         CertificateArray.push(newCertificate);
         emit CertificateCreated(newCertificate);
     }
+
+    function getCertificates() public constant returns (address[]) {
+            return CertificateArray;
+    }
+
 }
