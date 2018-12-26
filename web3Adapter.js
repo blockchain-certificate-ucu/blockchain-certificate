@@ -6,87 +6,14 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 
 let abi = [
     {
-        "constant": true,
-        "inputs": [],
-        "name": "date",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "title",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "givenBy",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "id",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "recepient",
-        "outputs": [
-            {
-                "name": "id",
-                "type": "address"
-            },
-            {
-                "name": "fullname",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
+        "constant": false,
         "inputs": [
             {
-                "name": "_title",
+                "name": "title",
                 "type": "string"
             },
             {
-                "name": "_id",
+                "name": "id",
                 "type": "uint256"
             },
             {
@@ -98,17 +25,82 @@ let abi = [
                 "type": "string"
             },
             {
-                "name": "_date",
+                "name": "date",
                 "type": "string"
             }
         ],
+        "name": "createCertificate",
+        "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
-        "type": "constructor"
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "createCertificate2",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "name": "certificateAddress",
+                "type": "address"
+            }
+        ],
+        "name": "CertificateCreated",
+        "type": "event"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "CertificateArray",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "CertificateList",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
     }
 ];
 
-let CoursesContract = web3.eth.contract(abi);
-console.log(CoursesContract);
-let Courses = CoursesContract.at('0x2f898b48bcfee0d38fc702ec7d1e0168a21729f5');
-console.log(Courses);
+let CertificateFactory = web3.eth.contract(abi);
+console.log(CertificateFactory);
+let Certificate = CertificateFactory.at('0x7b43117a046ee67135cc31b2b023ce4b65bde3dd');
+console.log(Certificate);
